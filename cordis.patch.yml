@@ -1,0 +1,16 @@
+# dsh-remote-hosts bundle layer.
+#
+# One insert row is all the harness needs: the package's `dsh.bundle.patch`
+# declaration makes this file the loader layer, and `lib/index.mjs` is the host
+# half. `./client` (lib/client.js) is served to the browser as the client half.
+#
+# Install:
+#   dsh plugin --profile agg add <path-to-this-directory>
+# The `desktop` profile is owned by the Electron app and cannot be managed from
+# the CLI, so a dedicated profile is used for this plugin.
+
+- insert:
+    - id: remote-hosts
+      name: dsh-remote-hosts
+      config:
+        enabled: true

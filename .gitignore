@@ -1,0 +1,13 @@
+# Never publish local installs, backups or build artifacts.
+node_modules/
+*.tgz
+*.tar.gz
+*.backup
+*.bak
+*.bak-*
+.e2e-store.json
+*.log
+
+# probe/ is local exploration scratch: it documents one private remote's paths
+# and session samples, so it stays out of the published repository.
+/probe/

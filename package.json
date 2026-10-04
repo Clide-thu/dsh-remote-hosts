@@ -1,0 +1,57 @@
+{
+  "name": "dsh-remote-hosts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open remote DeepSeek Harness hosts inside the local window: one click starts the SSH tunnel and loads the host's own Web UI in the official Browser tab, plus a read-only per-host workspace/session panel in the left sidebar",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": {
+      "default": "./lib/index.mjs"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.mjs",
+    "lib/client.js",
+    "lib/ssh-config.mjs",
+    "lib/credentials.mjs",
+    "lib/tunnel.mjs",
+    "lib/remote-client.mjs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "license": "MIT",
+  "author": "Clide-thu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clide-thu/dsh-remote-hosts.git"
+  },
+  "homepage": "https://github.com/Clide-thu/dsh-remote-hosts#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-host-webserver": "*",
+    "@deepseek-ai/dsh-client-connection": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": { "optional": true },
+    "@deepseek-ai/dsh-host-webserver": { "optional": true },
+    "@deepseek-ai/dsh-client-connection": { "optional": true }
+  }
+}
